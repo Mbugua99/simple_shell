@@ -1,15 +1,15 @@
 #include "shell.h"
 
 /**
- * **strtow - splits a string into words. Repeat delimiters are ignored
+ * **strtow - splits a str into words. Repeat delimiters are ignored
  * @str: the input string
- * @d: the delimeter string
+ * @d: the delimeter str
  * Return: a pointer to an array of strings, or NULL on failure
  */
 
 char **strtow(char *str, char *d)
 {
-	int i, j, k, m, numwords = 0;
+	int i, j, k, q, numwords = 0;
 	char **s;
 
 	if (str == NULL || str[0] == 0)
@@ -40,9 +40,9 @@ char **strtow(char *str, char *d)
 			free(s);
 			return (NULL);
 		}
-		for (m = 0; m < k; m++)
-			s[j][m] = str[i++];
-		s[j][m] = 0;
+		for (q = 0; q < k; q++)
+			s[j][q] = str[i++];
+		s[j][q] = 0;
 	}
 	s[j] = NULL;
 	return (s);
@@ -50,13 +50,13 @@ char **strtow(char *str, char *d)
 
 /**
  * **strtow2 - splits a string into words
- * @str: the input string
+ * @str: the input str
  * @d: the delimeter
  * Return: a pointer to an array of strings, or NULL on failure
  */
 char **strtow2(char *str, char d)
 {
-	int i, j, k, m, numwords = 0;
+	int i, j, k, q, numwords = 0;
 	char **s;
 
 	if (str == NULL || str[0] == 0)
@@ -85,9 +85,9 @@ char **strtow2(char *str, char d)
 			free(s);
 			return (NULL);
 		}
-		for (m = 0; m < k; m++)
-			s[j][m] = str[i++];
-		s[j][m] = 0;
+		for (q = 0; q < k; q++)
+			s[j][q] = str[i++];
+		s[j][q] = 0;
 	}
 	s[j] = NULL;
 	return (s);

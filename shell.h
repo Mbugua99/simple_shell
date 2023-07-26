@@ -1,13 +1,13 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
+#include <sys/types.h>
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -51,12 +51,12 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct passinfo - contains pseudo-arguements to pass into a function,
+ * struct passinfo - contains pseudo-arguments to pass into a function,
  * allowing uniform prototype for function pointer struct
- * @arg: a string generated from getline containing arguements
- * @argv:an array of strings generated from arg
- * @path: a string path for the current command
- * @argc: the argument count
+ * @arg: a str generated from getline containing arguements
+ * @argv:an array of strings generated from arguments
+ * @path: string path for the current command
+ * @argc: the argeument count
  * @line_count: the error count
  * @err_num: the error code for exit()s
  * @linecount_flag: if on count this line of input
@@ -100,7 +100,7 @@ typedef struct passinfo
 		0, 0, 0}
 
 /**
- * struct builtin - contains a builtin string and related function
+ * struct builtin - Contains a builtin string and related function
  * @type: the builtin command flag
  * @func: the function
  */
