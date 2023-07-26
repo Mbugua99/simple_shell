@@ -65,24 +65,24 @@ void _puts(char *str)
 }
 
 /**
- * _putchar - Writes the character w to stdout
+ * _putchar - Writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char w)
+int _putchar(char c)
 {
-	static int i;
+	static int w;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (w == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSH || w >= WRITE_BUF_SIZE)
 	{
-		write(1, buf, i);
-		i = 0;
+		write(1, buf, w);
+		w = 0;
 	}
 	if (w != BUF_FLUSH)
-		buf[i++] = w;
+		buf[w++] = c;
 	return (1);
 }
 
