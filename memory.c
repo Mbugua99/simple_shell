@@ -2,9 +2,9 @@
 
 /**
  * bfree - frees a pointer and NULLs the address
- * @ptr: address the pointer to free
+ * @ptr: address of the pointer to free
  *
- * Return: 1 if freed, 0 if not.
+ * Return: 1 if freed, otherwise 0.
  */
 int bfree(void **ptr)
 {

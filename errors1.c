@@ -1,24 +1,24 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an integer
+ * _erratoi - converts a str to an int
  * @s: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
 int _erratoi(char *s)
 {
-	int p = 0;
+	int i = 0;
 	unsigned long int result = 0;
 
 	if (*s == '+')
 		s++;  /* TODO: why does this make main return 255? */
-	for (p = 0;  s[p] != '\0'; i++)
+	for (i = 0;  s[i] != '\0'; i++)
 	{
-		if (s[p] >= '0' && s[p] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			result *= 10;
-			result += (s[p] - '0');
+			result += (s[i] - '0');
 			if (result > INT_MAX)
 				return (-1);
 		}
@@ -56,7 +56,7 @@ void print_error(info_t *info, char *estr)
 int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
-	int p, count = 0;
+	int i, count = 0;
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
@@ -70,14 +70,14 @@ int print_d(int input, int fd)
 	else
 		_abs_ = input;
 	current = _abs_;
-	for (p = 1000000000; p > 1; p /= 10)
+	for (i = 1000000000; i > 1; i /= 10)
 	{
-		if (_abs_ / p)
+		if (_abs_ / i)
 		{
-			__putchar('0' + current / p);
+			__putchar('0' + current / i);
 			count++;
 		}
-		current %= p;
+		current %= i;
 	}
 	__putchar('0' + current);
 	count++;
@@ -87,11 +87,11 @@ int print_d(int input, int fd)
 
 /**
  * convert_number - converter function, a clone of itoa
- * @num: num
+ * @num: number
  * @base: base
  * @flags: argument flags
  *
- * Return: str
+ * Return: string
  */
 char *convert_number(long int num, int base, int flags)
 {
@@ -122,19 +122,19 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments -the function replaces the first instance of '#' with '\0'
- * @buf: address of the str to modify
+ * remove_comments - function replaces first instance of '#' with '\0'
+ * @buf: address of the string to modify
  *
  * Return: Always 0;
  */
 void remove_comments(char *buf)
 {
-	int p;
+	int i;
 
-	for (p = 0; buf[p] != '\0'; i++)
-		if (buf[p] == '#' && (!p || buf[p - 1] == ' '))
+	for (i = 0; buf[i] != '\0'; i++)
+		if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
 		{
-			buf[p] = '\0';
+			buf[i] = '\0';
 			break;
 		}
 }

@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - returns the length of a str
  * @s: the string whose length to check
  *
  * Return: integer length of string
@@ -56,7 +56,7 @@ char *starts_with(const char *haystack, const char *needle)
 }
 
 /**
- * _strcat - concatenates two strings
+ * _strcat - concatenates two str
  * @dest: the destination buffer
  * @src: the source buffer
  *

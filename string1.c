@@ -5,7 +5,7 @@
  * @dest: the destination
  * @src: the source
  *
- * Return: the pointer to destination
+ * Return: pointer to destination
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -23,8 +23,8 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- * _strdup - duplicates a string
- * @str: the string to be duplicated
+ * _strdup - duplicates a str
+ * @str: the string to duplicate
  *
  * Return: pointer to the duplicated string
  */
@@ -46,7 +46,7 @@ char *_strdup(const char *str)
 }
 
 /**
- * _puts - prints an input string
+ * _puts - prints an input str
  * @str: the string to be printed
  *
  * Return: Nothing
@@ -65,7 +65,7 @@ void _puts(char *str)
 }
 
 /**
- * _putchar - Writes the character c to stdout
+ * _putchar - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
@@ -73,16 +73,16 @@ void _puts(char *str)
  */
 int _putchar(char c)
 {
-	static int w;
+	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (c == BUF_FLUSH || w >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
-		write(1, buf, w);
-		w = 0;
+		write(1, buf, i);
+		i = 0;
 	}
-	if (w != BUF_FLUSH)
-		buf[w++] = c;
+	if (c != BUF_FLUSH)
+		buf[i++] = c;
 	return (1);
 }
 
